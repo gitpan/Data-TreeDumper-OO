@@ -16,17 +16,17 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
-use Data::TreeDumper 0.15 ;
+use Data::TreeDumper 0.20 ;
 
 #----------------------------------------------------------------------------------------------------
 
 sub new 
 {
-my($class, @setup_data) = @_;
+my($class, %setup_data) = @_;
 
-return bless({Data::TreeDumper::GetPackageSetup(), @setup_data}, $class);
+return bless({%Data::TreeDumper::setup, %setup_data}, $class);
 }
 
 #------------------------------------------------------------------------------------------
@@ -61,6 +61,8 @@ return
 			  , RENDERER               => $self->{RENDERER}
 			  , GLYPHS                 => $self->{GLYPHS}
 			  , QUOTE_HASH_KEYS        => $self->{QUOTE_HASH_KEYS}
+			  , QUOTE_VALUES           => $self->{QUOTE_VALUES}
+			  , REPLACEMENT_LIST       => $self->{REPLACEMENT_LIST}
 			  
 			  , __DATA_PATH            => $self->{__DATA_PATH}
 			  , __TYPE_SEPARATORS      => $self->{__TYPE_SEPARATORS}
@@ -72,6 +74,7 @@ return
 }
 
 #------------------------------------------------------------------------------------------
+
 sub DumpMany
 {
 my $self = shift ;
@@ -154,10 +157,24 @@ $self->{INDENTATION} = $indentation ;
 }
 
 #------------------------------------------------------------------------------------------
+sub ReplacementList
+{
+my($self, $replacement) = @_ ;
+$self->{REPLACEMENT_LIST} = $replacement ;
+}
+
+#------------------------------------------------------------------------------------------
 sub QuoteHashKeys
 {
 my($self, $quote) = @_ ;
 $self->{QUOTE_HASH_KEYS} = $quote ;
+}
+
+#------------------------------------------------------------------------------------------
+sub QuoteValues
+{
+my($self, $quote) = @_ ;
+$self->{QUOTE_VALUES} = $quote ;
 }
 
 #------------------------------------------------------------------------------------------

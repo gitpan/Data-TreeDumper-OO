@@ -1,5 +1,9 @@
 Revision history for Perl extension Data::TreeDumper::OO.
 
+0.03  Sun Jan 16 16:00:00 2005
+	ADDED: QuoteValues to  reflect changes in Data::TreeDumper
+	CHANGED: object construction doesn't use package variables anymore
+
 0.02  Fri Aug 6 23:25:00 2004
 	ADDED: SetGlyphs and QuoteHashKeys to reflect changes in Data::TreeDumper
 	
