@@ -16,9 +16,9 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
-use Data::TreeDumper 0.14 ;
+use Data::TreeDumper 0.15 ;
 
 #----------------------------------------------------------------------------------------------------
 
@@ -59,6 +59,8 @@ return
 			  , COLOR_LEVELS           => $self->{COLOR_LEVELS}
 			  , NO_OUTPUT              => $self->{NO_OUTPUT}
 			  , RENDERER               => $self->{RENDERER}
+			  , GLYPHS                 => $self->{GLYPHS}
+			  , QUOTE_HASH_KEYS        => $self->{QUOTE_HASH_KEYS}
 			  
 			  , __DATA_PATH            => $self->{__DATA_PATH}
 			  , __TYPE_SEPARATORS      => $self->{__TYPE_SEPARATORS}
@@ -152,6 +154,13 @@ $self->{INDENTATION} = $indentation ;
 }
 
 #------------------------------------------------------------------------------------------
+sub QuoteHashKeys
+{
+my($self, $quote) = @_ ;
+$self->{QUOTE_HASH_KEYS} = $quote ;
+}
+
+#------------------------------------------------------------------------------------------
 sub SetVirtualWidth
 {
 my($self, $width) = @_ ;
@@ -205,6 +214,13 @@ sub ColorLevels
 {
 my($self, $color_levels) = @_ ;
 $self->{COLOR_LEVELS} = $color_levels ;
+}
+
+#------------------------------------------------------------------------------------------
+sub SetGlyphs
+{
+my($self, $glyphs) = @_ ;
+$self->{GLYPHS} = $glyphs ;
 }
 
 #------------------------------------------------------------------------------------------
@@ -315,6 +331,7 @@ Object oriented interface to Data::TreeDumper.
   $dumper->SetFilter(\&Data::TreeDumper::HashKeysSorter) ;
   $dumper->SetLevelFilters({1 => \&Filter_1, 5 => \&Filter_5) ;
   $dumper->SetStartLevel(0) ;
+  $dumper->QuoteHashKeys(1) ;
   $dumper->DisplayRootAddress(1) ;
   $dumper->DisplayAddress(0) ;
   $dumper->DisplayObjectType(0) ;
@@ -322,6 +339,7 @@ Object oriented interface to Data::TreeDumper.
   $dumper->DisplayPerlSize(0) ;
   $dumper->NumberLevels(2) ;
   $dumper->ColorLevels(\&ColorLevelSub) ;
+  $dumper->SetGlyphs(['.  ', '.  ', '.  ', '.  ']) ;
   $dumper->NoOutput(1) ;
   $dumper->SetRenderer('DHTML') ;
   
