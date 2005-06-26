@@ -16,9 +16,9 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
-use Data::TreeDumper 0.20 ;
+use Data::TreeDumper 0.21 ;
 
 #----------------------------------------------------------------------------------------------------
 
@@ -63,6 +63,7 @@ return
 			  , QUOTE_HASH_KEYS        => $self->{QUOTE_HASH_KEYS}
 			  , QUOTE_VALUES           => $self->{QUOTE_VALUES}
 			  , REPLACEMENT_LIST       => $self->{REPLACEMENT_LIST}
+			  , DISPLAY_PATH           => $self->{DISPLAY_PATH}
 			  
 			  , __DATA_PATH            => $self->{__DATA_PATH}
 			  , __TYPE_SEPARATORS      => $self->{__TYPE_SEPARATORS}
@@ -196,6 +197,13 @@ sub DisplayAddress
 {
 my($self, $display_address) = @_ ;
 $self->{DISPLAY_ADDRESS} = $display_address ;
+}
+
+#------------------------------------------------------------------------------------------
+sub DisplayPath
+{
+my($self, $display_path) = @_ ;
+$self->{DISPLAY_PATH} = $display_path;
 }
 
 #------------------------------------------------------------------------------------------
