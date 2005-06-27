@@ -16,7 +16,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use Data::TreeDumper 0.22 ;
 
@@ -217,21 +217,21 @@ $self->{DISPLAY_OBJECT_TYPE} = $display_object_type ;
 }
 
 #------------------------------------------------------------------------------------------
-sub DisplayObjectType
+sub DisplayInheritance
 {
 my($self, $display_inheritance) = @_ ;
 $self->{DISPLAY_INHERITANCE} = $display_inheritance ;
 }
 
 #------------------------------------------------------------------------------------------
-sub DisplayObjectType
+sub DisplayAutoload
 {
 my($self, $display_autoload) = @_ ;
 $self->{DISPLAY_AUTOLOAD} = $display_autoload ;
 }
 
 #------------------------------------------------------------------------------------------
-sub DisplayObjectType
+sub Displaytie
 {
 my($self, $display_tie) = @_ ;
 $self->{DISPLAY_TIE} = $display_tie ;

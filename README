@@ -1,14 +1,9 @@
 Data/TreeDumper/OO 
 ===================
 
-Version 0.03
+Version 0.06
 
 Data::TreeDumper::OO Object oriented interface to Data::TreeDumper.
-
-In this release:
-
-	ADDED: QuoteValues to  reflect changes in Data::TreeDumper
-	CHANGED: object construction doesn't use package variables anymore
 
 Ex:
 

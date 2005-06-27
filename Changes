@@ -1,5 +1,8 @@
 Revision history for Perl extension Data::TreeDumper::OO.
 
+0.06  Tue Jun 28 0:45:00 2005
+	FIXED: dam'it I hate copy paste
+
 0.05  Tue Jun 28 0:00:00 2005
 	CHANGED: updated to match Data::TreeDumper 0.22
 
