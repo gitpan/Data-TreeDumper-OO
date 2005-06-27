@@ -16,9 +16,9 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
-use Data::TreeDumper 0.21 ;
+use Data::TreeDumper 0.22 ;
 
 #----------------------------------------------------------------------------------------------------
 
@@ -51,6 +51,9 @@ return
 			  , INDENTATION            => $self->{INDENTATION}
 			  , VIRTUAL_WIDTH          => $self->{VIRTUAL_WIDTH}
 			  , DISPLAY_OBJECT_TYPE    => $self->{DISPLAY_OBJECT_TYPE}
+			  , DISPLAY_INHERITANCE    => $self->{DISPLAY_INHERITANCE}
+			  , DISPLAY_AUTOLOAD       => $self->{DISPLAY_AUTOLOAD}
+			  , DISPLAY_TIE            => $self->{DISPLAY_TIE}
 			  , DISPLAY_ADDRESS        => $self->{DISPLAY_ADDRESS}
 			  , DISPLAY_ROOT_ADDRESS   => $self->{DISPLAY_ROOT_ADDRESS}
 			  , DISPLAY_PERL_ADDRESS   => $self->{DISPLAY_PERL_ADDRESS}
@@ -214,6 +217,27 @@ $self->{DISPLAY_OBJECT_TYPE} = $display_object_type ;
 }
 
 #------------------------------------------------------------------------------------------
+sub DisplayObjectType
+{
+my($self, $display_inheritance) = @_ ;
+$self->{DISPLAY_INHERITANCE} = $display_inheritance ;
+}
+
+#------------------------------------------------------------------------------------------
+sub DisplayObjectType
+{
+my($self, $display_autoload) = @_ ;
+$self->{DISPLAY_AUTOLOAD} = $display_autoload ;
+}
+
+#------------------------------------------------------------------------------------------
+sub DisplayObjectType
+{
+my($self, $display_tie) = @_ ;
+$self->{DISPLAY_TIE} = $display_tie ;
+}
+
+#------------------------------------------------------------------------------------------
 sub DisplayPerlSize
 {
 my($self, $display_perl_size) = @_ ;
@@ -360,6 +384,9 @@ Object oriented interface to Data::TreeDumper.
   $dumper->DisplayRootAddress(1) ;
   $dumper->DisplayAddress(0) ;
   $dumper->DisplayObjectType(0) ;
+  $dumper->Displayinheritance(0) ;
+  $dumper->DisplayAutoload(0) ;
+  $dumper->DisplayTie(0) ;
   $dumper->DisplayPerlAddress(1) ;
   $dumper->DisplayPerlSize(0) ;
   $dumper->NumberLevels(2) ;
@@ -388,7 +415,7 @@ None.
 
 Khemir Nadim ibn Hamouda. <nadim@khemir.net>
 
-  Copyright (c) 2003 Nadim Ibn Hamouda el Khemir. All rights
+  Copyright (c) 2003-2005 Nadim Ibn Hamouda el Khemir. All rights
   reserved.  This program is free software; you can redis-
   tribute it and/or modify it under the same terms as Perl
   itself.
