@@ -16,9 +16,9 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
-use Data::TreeDumper 0.22 ;
+use Data::TreeDumper 0.24 ;
 
 #----------------------------------------------------------------------------------------------------
 
@@ -63,6 +63,7 @@ return
 			  , NO_OUTPUT              => $self->{NO_OUTPUT}
 			  , RENDERER               => $self->{RENDERER}
 			  , GLYPHS                 => $self->{GLYPHS}
+			  , NO_NO_ELEMENTS         => $self->{NO_NO_ELEMENTS}
 			  , QUOTE_HASH_KEYS        => $self->{QUOTE_HASH_KEYS}
 			  , QUOTE_VALUES           => $self->{QUOTE_VALUES}
 			  , REPLACEMENT_LIST       => $self->{REPLACEMENT_LIST}
@@ -179,6 +180,13 @@ sub QuoteValues
 {
 my($self, $quote) = @_ ;
 $self->{QUOTE_VALUES} = $quote ;
+}
+
+#------------------------------------------------------------------------------------------
+sub DisplayNoElements
+{
+my($self, $no_no_elements) = @_ ;
+$self->{NO_NO_ELEMENTS} = ! $no_no_elements;
 }
 
 #------------------------------------------------------------------------------------------
@@ -381,6 +389,8 @@ Object oriented interface to Data::TreeDumper.
   $dumper->SetLevelFilters({1 => \&Filter_1, 5 => \&Filter_5) ;
   $dumper->SetStartLevel(0) ;
   $dumper->QuoteHashKeys(1) ;
+  $dumper->QuoteValues(0) ;
+  $dumper->DisplayNoElements(1) ;
   $dumper->DisplayRootAddress(1) ;
   $dumper->DisplayAddress(0) ;
   $dumper->DisplayObjectType(0) ;
