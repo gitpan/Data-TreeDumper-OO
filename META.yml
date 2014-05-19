@@ -1,10 +1,26 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         Data-TreeDumper-OO
-version:      0.07
-version_from: OO.pm
-installdirs:  site
+---
+abstract: 'Object oriented interface to Data::TreeDumper'
+author:
+  - 'Nadim Khemir <nadim.khemir@gmail.com>'
+build_requires:
+  Test: '0'
+configure_requires:
+  ExtUtils::MakeMaker: '6.30'
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 5.016, CPAN::Meta::Converter version 2.141170'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: Data-TreeDumper-OO
 requires:
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.24
+  Carp: '0'
+  Data::TreeDumper: '0.24'
+  Exporter: '0'
+  perl: '5.006'
+  strict: '0'
+  warnings: '0'
+resources:
+  homepage: https://github.com/neilbowers/Data-TreeDumper-OO
+  repository: https://github.com/neilbowers/Data-TreeDumper-OO.git
+version: '0.08'

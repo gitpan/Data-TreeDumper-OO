@@ -6,7 +6,7 @@ use warnings;
 use Carp ;
 
 require Exporter;
-use AutoLoader qw(AUTOLOAD);
+# use AutoLoader qw(AUTOLOAD);
 
 our @ISA = qw(Exporter);
 
@@ -415,28 +415,34 @@ Object oriented interface to Data::TreeDumper.
   	
 =head1 DEPENDENCY
 
-B<Data::TreeDumper>.
+L<Data::TreeDumper>.
 
 =head1 EXPORT
 
 None.
 
+=head1 SEE ALSO
+
+L<Data::TreeDumper>.
+L<Data::Dumper>.
+
+=head1 REPOSITORY
+
+L<https://github.com/neilbowers/Data-TreeDumper-OO>
+
 =head1 AUTHOR
 
 Khemir Nadim ibn Hamouda. <nadim@khemir.net>
 
-  Copyright (c) 2003-2005 Nadim Ibn Hamouda el Khemir. All rights
-  reserved.  This program is free software; you can redis-
-  tribute it and/or modify it under the same terms as Perl
-  itself.
-  
-If you find any value in this module, mail me!  All hints, tips, flames and wishes
-are welcome at <nadim@khemir.net>.
+=head1 COPYRIGHT AND LICENSE
 
-=head1 SEE ALSO
+Copyright (c) 2003-2014 Nadim Ibn Hamouda el Khemir. All rights reserved.
 
-B<Data::TreeDumper>.
-B<Data::Dumper>.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+If you find any value in this module, mail me!
+All hints, tips, flames and wishes are welcome at <nadim@khemir.net>.
 
 =cut
 

@@ -1,22 +1,29 @@
-Revision history for Perl extension Data::TreeDumper::OO.
+Revision history for Perl module Data::TreeDumper::OO
 
-0.06  Tue Jun 28 0:45:00 2005
-	FIXED: dam'it I hate copy paste
+0.08 2014-05-19
+    - Structured dist and switched to Dist::Zilla
+    - Reformatted end of pod to have explicit COPYRIGHT AND LICENSE section
+    - Added github repo to pod
+    - Reformatted this file as per CPAN::Changes::Spec
 
-0.05  Tue Jun 28 0:00:00 2005
-	CHANGED: updated to match Data::TreeDumper 0.22
+0.07 2005-07-05 NKH
 
-0.04  Sun Jun 26 20:00:00 2005
-	CHANGED: updated to match Data::TreeDumper 0.21
+0.06 2005-06-27 NKH
+    - FIXED: dam'it I hate copy paste
 
-0.03  Sun Jan 16 16:00:00 2005
-	ADDED: QuoteValues to  reflect changes in Data::TreeDumper
-	CHANGED: object construction doesn't use package variables anymore
+0.05 2005-06-27 NKH
+    - CHANGED: updated to match Data::TreeDumper 0.22
 
-0.02  Fri Aug 6 23:25:00 2004
-	ADDED: SetGlyphs and QuoteHashKeys to reflect changes in Data::TreeDumper
-	
-0.01  Sat Jun 26 23:25:14 2004
-	- original version; created by h2xs 1.21 with options
-		-X -n Data::TreeDumper::OO
+0.04 2005-06-26 NKH
+    - CHANGED: updated to match Data::TreeDumper 0.21
+
+0.03 2005-01-16 NKH
+    - ADDED: QuoteValues to reflect changes in Data::TreeDumper
+    - CHANGED: object construction doesn't use package variables anymore
+
+0.02 2004-08-05 NKH
+    - ADDED: SetGlyphs and QuoteHashKeys to reflect changes in Data::TreeDumper
+
+0.01 2004-06-27 NKH
+    - First release to CPAN
 
