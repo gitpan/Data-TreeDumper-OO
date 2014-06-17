@@ -1,22 +1,16 @@
 package Data::TreeDumper::OO;
-
+$Data::TreeDumper::OO::VERSION = '0.09';
 use 5.006;
 use strict;
 use warnings;
-use Carp ;
+use Carp;
 
 require Exporter;
-# use AutoLoader qw(AUTOLOAD);
 
-our @ISA = qw(Exporter);
-
+our @ISA         = qw(Exporter);
 our %EXPORT_TAGS = ( 'all' => [ qw() ] );
-
-our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-
-our @EXPORT = qw();
-
-our $VERSION = '0.07';
+our @EXPORT_OK   = ( @{ $EXPORT_TAGS{'all'} } );
+our @EXPORT      = qw();
 
 use Data::TreeDumper 0.24 ;
 
@@ -423,8 +417,23 @@ None.
 
 =head1 SEE ALSO
 
-L<Data::TreeDumper>.
-L<Data::Dumper>.
+L<Data::TreeDumper> - the base class for this module.
+
+L<Data::Dumper> - convert perl data values
+or variables to equivalent Perl syntax.
+
+L<Data::Dumper::GUI> - a graphical interface on top of L<Data::Dumper>.
+
+L<Data::Dumper::Sorted> - like L<Data::Dumper> but sorts hash keys
+into alphabetic order.
+
+L<Data::Dumper::HTML> - dump data into HTML with syntax highlighting.
+
+L<Data::Dumper::Simple> and L<Data::Dumper::Names> work like L<Data::Dumper>
+but include the original variable names in the output.
+
+L<Data::Dumper::Perltidy> - combines L<Data::Dumper> and L<Perl::Tidy>
+to stringify data in a pretty-printed format.
 
 =head1 REPOSITORY
 

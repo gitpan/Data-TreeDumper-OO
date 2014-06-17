@@ -1,5 +1,10 @@
 Revision history for Perl module Data::TreeDumper::OO
 
+0.09 2014-06-17
+    - The module had an explicit VERSION in it, which was set to the wrong
+      version. Removed it, so DZ can do its thing.
+    - Added a bunch of module links to SEE ALSO.
+
 0.08 2014-05-19
     - Structured dist and switched to Dist::Zilla
     - Reformatted end of pod to have explicit COPYRIGHT AND LICENSE section
